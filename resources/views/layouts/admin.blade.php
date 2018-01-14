@@ -98,6 +98,11 @@
                 <i class="fa fa-dashboard"></i> <span>Modulo 2</span>
               </a>
             </li>
+            <li id="liEscritorio">
+              <a href="{{url('home')}}">
+                <i class="fa fa-dashboard"></i> <span>Modulo 3</span>
+              </a>
+            </li>
             <li id="liAlmacen" class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
