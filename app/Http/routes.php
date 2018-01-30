@@ -26,6 +26,7 @@ Route::resource('ventas/venta','VentaController');
 Route::resource('consulta/local','ConsultaLocalController');
 Route::resource('consulta/sucursales','ConsultaSucursalesController');
 Route::resource('seguridad/usuario','UsuarioController');
+Route::resource('seguridad/tipousuario','TipoUsuarioController');
 Route::resource('movimientos/traslados','TrasladosController');
 Route::resource('administracion/sucursales','SucursalesController');
 Route::resource('administracion/empleados','EmpleadosController');

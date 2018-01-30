@@ -16,6 +16,9 @@
 
 			{!!Form::open(array('url'=>'seguridad/usuario','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
+            <div class="panel panel-primary">
+            <div class="panel-body">
+    
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
 
@@ -71,16 +74,7 @@
                                 @endif
                             </div>
                         </div>
-                <div class="form-group{{ $errors->has('puesto') ? ' has-error' : '' }}">
-                <label for="tipousuario" class="col-md-4 control-label">Puesto</label>
-                <select name="tipousuario" class="form-control">
-                <option value="cajero">Cajero</option>
-                <option value="encargado">Encargado</option>
-                <option value="gerente">Gerentes</option>
-                <option value="bodeguero">Bodeguero</option>
-                       
-                </select>
-            </div>
+                
           
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                  <div class="form-group">
@@ -95,7 +89,7 @@
                     </div>
                 </div>
         
-            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                  <div class="form-group">
                     <label>Empleados</label>
                     
@@ -107,7 +101,19 @@
                         </select>   
                     </div>
                 </div>
-            
+           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                 <div class="form-group">
+                    <label>TipoUsuario</label>
+                    
+                    <select name="pidtipousuario" class="form-control selectpicker" id="pidtipousuario" data-live-search="true">
+                    
+                    @foreach($tipousuario as $tipo)
+                    <option  value="{{$tipo->idtipo}}_{{$tipo->descripcion}}"> {{$tipo->descripcion}}  </option>
+                     @endforeach
+                        </select>   
+                    </div>
+                </div>
+         
 
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
@@ -121,10 +127,12 @@
         </div>
             
 
-            <div class="form-group">
-            	<button class="btn btn-primary" type="submit">Guardar</button>
-            	<button class="btn btn-danger" type="reset">Cancelar</button>
+    <div class="form-group">
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <button class="btn btn-danger" type="reset">Cancelar</button>
             </div>
+        </div>
+    </div>
 
 			{!!Form::close()!!}		
             
