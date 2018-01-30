@@ -87,22 +87,6 @@
               <a href="{{url('home')}}">
                 <i class="fa fa-dashboard"></i> <span>Escritorio</span>
               </a>
-            </li>
-             <li id="liEscritorio">
-              <a href="{{url('home')}}">
-                <i class="fa fa-dashboard"></i> <span>Modulo nuevo</span>
-              </a>
-            </li>
-            <li id="liEscritorio">
-              <a href="{{url('home')}}">
-                <i class="fa fa-dashboard"></i> <span>Modulo 2</span>
-              </a>
-            </li>
-            <li id="liEscritorio">
-              <a href="{{url('home')}}">
-                <i class="fa fa-dashboard"></i> <span>Modulo 3</span>
-              </a>
-            </li>
             <li id="liAlmacen" class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
@@ -171,6 +155,10 @@
               </a>
               <ul class="treeview-menu">
                 <li id="liUsuarios"><a href="{{url('seguridad/usuario')}}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                
+              </ul>
+               <ul class="treeview-menu">
+                <li id="liTipoUsuario"><a href="{{url('seguridad/tipousuario')}}"><i class="fa fa-circle-o"></i> Tipo_usuario</a></li>
                 
               </ul>
             </li>

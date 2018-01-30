@@ -35,6 +35,7 @@ class UsuarioController extends Controller
         
          $empleados=DB::table('empleados as emp')->where('estado','=','Activo')->get();
          $sucursales=DB::table('sucursales as suc')->where('estado','=','Activo')->get();
+         $tipousuario=DB::table('tipo_usuario as tipo')->where('estado','=','Activo')->get();
          
          $inventarios = DB::table('inventarios as inv')
                 
@@ -43,6 +44,7 @@ class UsuarioController extends Controller
 
          ->select(DB::raw('CONCAT(emp.idempleado, " ",emp.nombre) as empleados'))
          ->select(DB::raw('CONCAT(suc.idsucursal, " ",suc.nombre) as sucursales'))
+         ->select(DB::raw('CONCAT(tipo.idtipo, " ",tipo.descripcion) as tipousuario'))
 
           ->select(DB::raw('CONCAT(inv.idarticulo, " ",inv.descripcion) as inventarios'),'inv.idarticulo','inv.cantidad',DB::raw('avg(inv.precioventa) as precio_venta'))
             
@@ -54,7 +56,7 @@ class UsuarioController extends Controller
         
         
 
-        return view("seguridad.usuario.create",["sucursales"=>$sucursales,"empleados"=>$empleados]);
+        return view("seguridad.usuario.create",["sucursales"=>$sucursales,"empleados"=>$empleados,"tipousuario"=>$tipousuario]);
     }
 
 
@@ -64,7 +66,7 @@ class UsuarioController extends Controller
         $usuario->name=$request->get('name');
         $usuario->email=$request->get('email');
         $usuario->password=bcrypt($request->get('password'));
-        $usuario->tipousuario=$request->get('tipousuario');
+        $usuario->tipousuario=$request->get('ptipousuario');
         $usuario->idempleado=$request->get('idempleado');
         $usuario->estado=$request->get('estado');
         $usuario->save();
