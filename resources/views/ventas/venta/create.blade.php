@@ -73,7 +73,7 @@
          <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
             <div class="form-group">
                 <label for="fecha_hora">Fecha</label>
-                <input type="text" id="fecha_hora" name="fecha_hora" class="form-control"  value="<?php echo date("m/d/Y"); ?>" required/> 
+                <input type="text" id="fecha_hora" disabled name="fecha_hora" class="form-control"  value="<?php echo date("m/d/Y"); ?>" required/> 
             </div>
          </div>
     
@@ -121,9 +121,8 @@
                 </div>
                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                     <div class="form-group">
-                        <label for="precio_costo">PrecioCosto</label>
                         <input type="number" name="pprecio_costo" id="pprecio_costo" class="form-control" 
-                        placeholder="P. Costo">
+                        placeholder="P. Costo" style="visibility:hidden">
                     </div>
                 </div>
 

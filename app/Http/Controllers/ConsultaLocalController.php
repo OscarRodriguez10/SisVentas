@@ -24,9 +24,10 @@ class ConsultaLocalController extends Controller
             ->join('articulo as a','i.idarticulo','=','a.idarticulo','')
             ->join('sucursales as s','i.idsucursal','=','s.idsucursal','')
             
-            ->select('i.cantidad','i.idarticulo','i.descripcion','i.precioventa','s.nombre as sucursales','i.idinventario')
+            ->select('i.cantidad','i.idarticulo','a.codigo','i.descripcion','i.precioventa','s.nombre as sucursales','i.idinventario')
             ->where('i.idsucursal','=','3')
             ->where('i.descripcion','LIKE','%'.$query.'%')
+            ->where('a.codigo','LIKE','%'.$query.'%')
             ->orderBy('i.idinventario','desc')
             ->paginate(7);
     return view('consulta.local.index',['consultas'=>$consultas,"searchText"=>$query]);

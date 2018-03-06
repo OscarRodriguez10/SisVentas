@@ -45,9 +45,7 @@
               <!-- Messages: style can be found in dropdown.less-->
               
               <!-- User Account: style can be found in dropdown.less -->
-             
-                   
-              <li class="dropdown user user-menu">
+             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Usuario</small>
                   <span class="hidden-xs">{{ Auth::user()->name }}</span>
@@ -73,6 +71,8 @@
 
         </nav>
       </header>
+                   
+              
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -87,6 +87,21 @@
               <a href="{{url('home')}}">
                 <i class="fa fa-dashboard"></i> <span>Escritorio</span>
               </a>
+
+            <li id="liTurno" class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Turno</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liApertura"><a href="{{url('almacen/articulo')}}"><i class="fa fa-circle-o"></i> Apertura</a></li>
+                <li id="liCierre"><a href="{{url('almacen/categoria')}}"><i class="fa fa-circle-o"></i> Cierre</a></li>
+                
+              </ul>
+
+            </li>
+
             <li id="liAlmacen" class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
@@ -185,8 +200,20 @@
                 
               </ul>
             </li>
+
+            <li id="liReportes" class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Reportes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liVentas"><a href="{{url('informacion/bonos')}}"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li id="liCierres"><a href="{{url('informacion/sucursales')}}"><i class="fa fa-circle-o"></i> Cierres</a></li>
+                
+              </ul>
+            </li>
              
-              
+            </li>  
                         
           </ul>
         </section>
