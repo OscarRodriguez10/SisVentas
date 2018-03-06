@@ -52,8 +52,8 @@
 </div>
 @push ('scripts')
 <script>
-$('#liVentas').addClass("treeview active");
-$('#liVentass').addClass("active");
+$('#liMovimientos').addClass("treeview active");
+$('#liTraslados').addClass("active");
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">

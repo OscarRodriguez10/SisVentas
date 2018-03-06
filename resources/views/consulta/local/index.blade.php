@@ -1,4 +1,4 @@
-		@extends ('layouts.admin')
+@extends ('layouts.admin')
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -13,6 +13,7 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>Idarticulo</th>
+					<th>Barra</th>
 					<th>Cantidad</th>
 					<th>Descripcion</th>
 					<th>Precio</th>
@@ -23,6 +24,7 @@
                @foreach ($consultas as $con)
 				<tr>
 					<td>{{ $con->idarticulo}}</td>
+					<td>{{ $con->codigo}}</td>
 					<td>{{ $con->cantidad}}</td>
 					<td>{{ $con->descripcion}}</td>
 					<td>{{ $con->precioventa}}</td>
@@ -37,8 +39,8 @@
 </div>
 @push ('scripts')
 <script>
-$('#liAdministracion').addClass("treeview active");
-$('#liSucursales').addClass("active");
+$('#liConsulta').addClass("treeview active");
+$('#liLocal').addClass("active");
 </script>
 @endpush
 @endsection

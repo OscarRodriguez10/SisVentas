@@ -4,9 +4,9 @@
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 	<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 			<div class="form-group">
-				<label for="pidsucursal">Sucursal </label>
+				
 				<input type="number" name="pidsucursal" id="pidsucursal" value="{{ Auth::user()->idsucursal}}" class="form-control" 
-				placeholder="Idsucural..">
+				placeholder="Idsucural.." style="visibility:hidden">
 			</div>
 		</div>
 		<h3>Listado de Ingresos <a href="" <button class="nueva-clase"> <button class="btn btn-success">Nuevo</button></a> <a href="{{url('reporteventas')}}" target="_blank"><button class="btn btn-info">Reporte</button></a></h3>
@@ -55,8 +55,8 @@
 </div>
 @push ('scripts')
 <script>
-$('#liCompras').addClass("treeview active");
-$('#liIngresos').addClass("active");
+$('#liVentas').addClass("treeview active");
+$('#liVentass').addClass("active");
 </script>
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

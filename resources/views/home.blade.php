@@ -1,9 +1,9 @@
 @extends ('layouts.admin')
 @section ('contenido')
 <div class="row">
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Estadísticas</h3>
-	</div>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <h3>Estadísticas</h3>
+  </div>
 </div>
 
 <?php 
@@ -149,7 +149,7 @@ foreach ($totales as $total)
 
         var ComprasMes = {
           labels: [<?php foreach ($comprasmes as $reg)
-          			{echo '"'. $reg->mes.'",';} ?>],
+                {echo '"'. $reg->mes.'",';} ?>],
           datasets: [
             {
               label: "Electronics",
@@ -170,14 +170,14 @@ foreach ($totales as $total)
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgba(60,141,188,1)",
               data: [<?php foreach ($comprasmes as $reg)
-          			{echo ''. $reg->totalmes.',';} ?>]
+                {echo ''. $reg->totalmes.',';} ?>]
             }
           ]
         };
 
         var VentasMes = {
           labels: [<?php foreach ($ventasmes as $reg)
-          			{echo '"'. $reg->mes.'",';} ?>],
+                {echo '"'. $reg->mes.'",';} ?>],
           datasets: [
             {
               label: "Electronics",
@@ -198,14 +198,14 @@ foreach ($totales as $total)
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgba(60,141,188,1)",
               data: [<?php foreach ($ventasmes as $reg)
-          			{echo ''. $reg->totalmes.',';} ?>]
+                {echo ''. $reg->totalmes.',';} ?>]
             }
           ]
         };
 
         var VentasDias = {
           labels: [<?php foreach ($ventasdia as $reg)
-          			{echo '"'. $reg->dia.'",';} ?>],
+                {echo '"'. $reg->dia.'",';} ?>],
           datasets: [
             {
               label: "Electronics",
@@ -226,7 +226,7 @@ foreach ($totales as $total)
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgba(60,141,188,1)",
               data: [<?php foreach ($ventasdia as $reg)
-          			{echo ''. $reg->totaldia.',';} ?>]
+                {echo ''. $reg->totaldia.',';} ?>]
             }
           ]
         };
@@ -294,7 +294,7 @@ foreach ($totales as $total)
 
             foreach ($productosvendidos as $reg)
                        {
-                       	$cadena=$cadena.'{ value:'.$reg->cantidad.',color:"';
+                        $cadena=$cadena.'{ value:'.$reg->cantidad.',color:"';
                        switch($cont)
                        {
                         case 1:
@@ -403,6 +403,43 @@ foreach ($totales as $total)
       $('#liEstadistica').addClass("treeview active");
       $('#liEscritorio').addClass("active");
 
+    
+            
+
+            
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
     </script>
+  
+
 @endpush
 @endsection

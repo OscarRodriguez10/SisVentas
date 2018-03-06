@@ -35,7 +35,7 @@
 </div>
 @push ('scripts')
 <script>
-$('#liAdministracion').addClass("treeview active");
+$('#liConsulta').addClass("treeview active");
 $('#liSucursales').addClass("active");
 </script>
 @endpush
